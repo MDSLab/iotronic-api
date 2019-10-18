@@ -1,0 +1,40 @@
+put:
+  tags: []
+  summary: null
+  operationId: Attach Port_
+  produces:
+    - application/json
+  consumes:
+    - application/json
+  parameters:
+    - name: Content-Type
+      in: header
+      description: ''
+      required: true
+      type: string
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+    - in: body
+      name: body
+      description: ''
+      required: true
+      schema:
+        type: object
+        properties:
+          network:
+            type: string
+            example: bc0a17c7-6f8c-40d8-89a3-6139caa41456
+          subnet:
+            type: string
+            example: bc0a17c7-6f8c-40d8-89a3-6139caa41456
+        required:
+          - network
+          - subnet
+        $schema: 'http://json-schema.org/draft-04/schema#'
+  responses:
+    '200':
+      description: ''
+  security: []

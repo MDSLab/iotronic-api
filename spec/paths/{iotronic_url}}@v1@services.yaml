@@ -1,0 +1,60 @@
+post:
+  tags: []
+  summary: null
+  operationId: service create_
+  produces:
+    - application/json
+  consumes:
+    - application/json
+  parameters:
+    - name: Content-Type
+      in: header
+      description: ''
+      required: true
+      type: string
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+    - in: body
+      name: body
+      description: ''
+      required: true
+      schema:
+        type: object
+        properties:
+          port:
+            type: number
+            example: 12345
+          protocol:
+            type: string
+            example: TCP
+          name:
+            type: string
+            example: 'service{{$randomInt}}'
+        required:
+          - port
+          - protocol
+          - name
+        $schema: 'http://json-schema.org/draft-04/schema#'
+  responses:
+    '200':
+      description: ''
+  security: []
+get:
+  tags: []
+  summary: null
+  operationId: service list_
+  produces: []
+  consumes: []
+  parameters:
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+  responses:
+    '200':
+      description: ''
+  security: []

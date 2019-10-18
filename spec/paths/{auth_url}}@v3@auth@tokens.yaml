@@ -1,0 +1,93 @@
+post:
+  tags: []
+  summary: ''
+  operationId: token issue_
+  produces:
+    - application/json
+  consumes:
+    - application/json
+  parameters:
+    - name: Content-Type
+      in: header
+      description: ''
+      required: true
+      type: string
+    - in: body
+      name: body
+      description: ''
+      required: true
+      schema:
+        type: object
+        properties:
+          auth:
+            type: object
+            properties:
+              identity:
+                type: object
+                properties:
+                  methods:
+                    type: array
+                    items:
+                      type:
+                        - string
+                  password:
+                    type: object
+                    properties:
+                      user:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                            example: '{{user}}'
+                          domain:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                example: default
+                            required:
+                              - id
+                          password:
+                            type: string
+                            example: '{{password}}'
+                        required:
+                          - name
+                          - domain
+                          - password
+                    required:
+                      - user
+                required:
+                  - methods
+                  - password
+              scope:
+                type: object
+                properties:
+                  project:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: '{{project}}'
+                      domain:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            example: default
+                        required:
+                          - id
+                    required:
+                      - name
+                      - domain
+                required:
+                  - project
+            required:
+              - identity
+              - scope
+        required:
+          - auth
+        $schema: 'http://json-schema.org/draft-04/schema#'
+  responses:
+    '200':
+      description: ''
+  security: []

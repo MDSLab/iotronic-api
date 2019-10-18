@@ -1,0 +1,16 @@
+get:
+  tags: []
+  summary: null
+  operationId: request show_
+  produces: []
+  consumes: []
+  parameters:
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+  responses:
+    '200':
+      description: ''
+  security: []

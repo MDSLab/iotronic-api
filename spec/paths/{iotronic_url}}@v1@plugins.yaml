@@ -1,0 +1,206 @@
+post:
+  tags: []
+  summary: ''
+  operationId: plugin create_
+  produces:
+    - application/json
+  consumes:
+    - application/json
+  parameters:
+    - name: Content-Type
+      in: header
+      description: ''
+      required: true
+      type: string
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+    - in: body
+      name: body
+      description: ''
+      required: true
+      schema:
+        type: object
+        properties:
+          code:
+            type: string
+            example: >-
+              # Copyright 2017 MDSLAB - University of Messina
+
+              # All Rights Reserved.
+
+              #
+
+              # Licensed under the Apache License, Version 2.0 (the "License");
+              you may
+
+              # not use this file except in compliance with the License. You may
+              obtain
+
+              # a copy of the License at
+
+              #
+
+              # http://www.apache.org/licenses/LICENSE-2.0
+
+              #
+
+              # Unless required by applicable law or agreed to in writing,
+              software
+
+              # distributed under the License is distributed on an "AS IS"
+              BASIS, WITHOUT
+
+              # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+              See the
+
+              # License for the specific language governing permissions and
+              limitations
+
+              # under the License.
+
+
+              from iotronic_lightningrod.plugins import Plugin
+
+
+              from oslo_log import log as logging
+
+
+              LOG = logging.getLogger(__name__)
+
+
+              # User imports
+
+
+
+              class Worker(Plugin.Plugin):
+
+
+              def __init__(self, name, th_result, plugin_conf=None):
+
+              super(Worker, self).__init__(name, th_result, plugin_conf)
+
+
+              def run(self):
+
+              LOG.info("Input parameters: " + str(self.plugin_conf))
+
+              LOG.info("Plugin " + self.name + " process completed!")
+
+              self.th_result.put("ZERO RESULT")
+          name:
+            type: string
+            example: zeroOOO
+          callable:
+            type: boolean
+          parameters:
+            type: object
+            properties:
+              polling:
+                type: string
+                example: '600'
+              ckan_enabled:
+                type: boolean
+              temperature:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: A0
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+              brightness:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: A1
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+              humidity:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: A2
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+              gas:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: A3
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+              noise:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: A4
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+              pressure:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: i2c
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+            required:
+              - polling
+              - ckan_enabled
+              - temperature
+              - brightness
+              - humidity
+              - gas
+              - noise
+              - pressure
+        required:
+          - code
+          - name
+          - callable
+          - parameters
+        $schema: 'http://json-schema.org/draft-04/schema#'
+  responses:
+    '200':
+      description: ''
+  security: []
+get:
+  tags: []
+  summary: ''
+  operationId: plugin list_
+  produces: []
+  consumes: []
+  parameters:
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+  responses:
+    '200':
+      description: ''
+  security: []

@@ -1,0 +1,8 @@
+specFileName: /Users/g10/Downloads/swagger-file.json
+apiTitle: iotronic
+splitSpec: true
+codeSamples: true
+swaggerUI: true
+travis: true
+repo: MDSLab/iotronic-api
+oasVersion: '2.0'

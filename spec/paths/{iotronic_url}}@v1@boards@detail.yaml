@@ -1,0 +1,21 @@
+get:
+  tags: []
+  summary: ''
+  operationId: board list another proj_
+  produces: []
+  consumes: []
+  parameters:
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+    - name: project
+      in: query
+      required: true
+      x-is-map: false
+      type: string
+  responses:
+    '200':
+      description: ''
+  security: []

@@ -1,0 +1,120 @@
+post:
+  tags: []
+  summary: ''
+  operationId: plugin START_
+  produces:
+    - application/json
+  consumes:
+    - application/json
+  parameters:
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+    - name: Content-Type
+      in: header
+      description: ''
+      required: true
+      type: string
+    - in: body
+      name: body
+      description: ''
+      required: true
+      schema:
+        type: object
+        properties:
+          action:
+            type: string
+            example: PluginStart
+          parameters:
+            type: object
+            properties:
+              polling:
+                type: string
+                example: '600'
+              ckan_enabled:
+                type: boolean
+              temperature:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: A0
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+              brightness:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: A1
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+              humidity:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: A2
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+              gas:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: A3
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+              noise:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: A4
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+              pressure:
+                type: object
+                properties:
+                  pin:
+                    type: string
+                    example: i2c
+                  enabled:
+                    type: boolean
+                required:
+                  - pin
+                  - enabled
+            required:
+              - polling
+              - ckan_enabled
+              - temperature
+              - brightness
+              - humidity
+              - gas
+              - noise
+              - pressure
+        required:
+          - action
+          - parameters
+        $schema: 'http://json-schema.org/draft-04/schema#'
+  responses:
+    '200':
+      description: ''
+  security: []

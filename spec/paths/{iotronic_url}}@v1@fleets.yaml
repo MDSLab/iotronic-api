@@ -1,0 +1,56 @@
+get:
+  tags: []
+  summary: null
+  operationId: fleet list_
+  produces: []
+  consumes: []
+  parameters:
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+  responses:
+    '200':
+      description: ''
+  security: []
+post:
+  tags: []
+  summary: null
+  operationId: fleet create_
+  produces:
+    - application/json
+  consumes:
+    - application/json
+  parameters:
+    - name: Content-Type
+      in: header
+      description: ''
+      required: true
+      type: string
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+    - in: body
+      name: body
+      description: ''
+      required: true
+      schema:
+        type: object
+        properties:
+          description:
+            type: string
+            example: ''
+          name:
+            type: string
+            example: 'fleet{{$randomInt}}'
+        required:
+          - description
+          - name
+        $schema: 'http://json-schema.org/draft-04/schema#'
+  responses:
+    '200':
+      description: ''
+  security: []
