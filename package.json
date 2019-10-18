@@ -9,6 +9,7 @@
     "start": "swagger-repo serve",
     "build": "swagger-repo build -o web_deploy",
     "test": "swagger-repo validate",
+    "test": "",
     "gh-pages": "swagger-repo gh-pages"
   }
 }
