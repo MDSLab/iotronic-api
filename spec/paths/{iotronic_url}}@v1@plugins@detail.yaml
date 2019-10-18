@@ -1,0 +1,21 @@
+get:
+  tags: []
+  summary: ''
+  operationId: plugin details_
+  produces: []
+  consumes: []
+  parameters:
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+    - name: with_publics
+      in: query
+      required: true
+      x-is-map: false
+      type: string
+  responses:
+    '200':
+      description: ''
+  security: []

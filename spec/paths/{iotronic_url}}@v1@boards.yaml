@@ -1,0 +1,67 @@
+post:
+  tags: []
+  summary: ''
+  operationId: board create_
+  produces:
+    - application/json
+  consumes:
+    - application/json
+  parameters:
+    - name: Content-Type
+      in: header
+      description: ''
+      required: true
+      type: string
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+    - in: body
+      name: body
+      description: ''
+      required: true
+      schema:
+        type: object
+        properties:
+          code:
+            type: string
+            example: '{{$randomInt}}'
+          mobile:
+            type: boolean
+          location:
+            type: array
+            items:
+              type:
+                - object
+              required:
+                - latitude
+                - altitude
+                - longitude
+              properties:
+                latitude:
+                  type: string
+                  example: '1'
+                altitude:
+                  type: string
+                  example: '3'
+                longitude:
+                  type: string
+                  example: '2'
+          type:
+            type: string
+            example: server
+          name:
+            type: string
+            example: 'board{{$randomInt}}'
+        required:
+          - code
+          - mobile
+          - location
+          - type
+          - name
+        $schema: 'http://json-schema.org/draft-04/schema#'
+  responses:
+    '200':
+      description: ''
+  security: []

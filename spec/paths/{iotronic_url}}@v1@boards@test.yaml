@@ -1,0 +1,35 @@
+patch:
+  tags: []
+  summary: ''
+  operationId: board update_
+  produces:
+    - application/json
+  consumes:
+    - application/json
+  parameters:
+    - name: Content-Type
+      in: header
+      description: ''
+      required: true
+      type: string
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+    - in: body
+      name: body
+      description: ''
+      required: true
+      schema:
+        type: object
+        properties:
+          mobile:
+            type: boolean
+        required:
+          - mobile
+        $schema: 'http://json-schema.org/draft-04/schema#'
+  responses:
+    '200':
+      description: ''
+  security: []

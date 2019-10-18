@@ -1,0 +1,45 @@
+post:
+  tags: []
+  summary: null
+  operationId: Board DeviceReboot_
+  produces:
+    - application/json
+  consumes:
+    - application/json
+  parameters:
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+    - name: Content-Type
+      in: header
+      description: ''
+      required: true
+      type: string
+    - in: body
+      name: body
+      description: ''
+      required: true
+      schema:
+        type: object
+        properties:
+          action:
+            type: string
+            example: DeviceReboot
+          parameters:
+            type: object
+            properties:
+              delay:
+                type: number
+                example: 3
+            required:
+              - delay
+        required:
+          - action
+          - parameters
+        $schema: 'http://json-schema.org/draft-04/schema#'
+  responses:
+    '200':
+      description: ''
+  security: []

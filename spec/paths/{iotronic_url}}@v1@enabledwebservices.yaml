@@ -1,0 +1,16 @@
+get:
+  tags: []
+  summary: null
+  operationId: enabled webservice show_
+  produces: []
+  consumes: []
+  parameters:
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+  responses:
+    '200':
+      description: ''
+  security: []

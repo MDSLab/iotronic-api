@@ -1,0 +1,32 @@
+delete:
+  tags: []
+  summary: ''
+  operationId: plugin destroy_
+  produces: []
+  consumes: []
+  parameters:
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+  responses:
+    '200':
+      description: ''
+  security: []
+get:
+  tags: []
+  summary: ''
+  operationId: plugin show_
+  produces: []
+  consumes: []
+  parameters:
+    - name: X-Auth-Token
+      in: header
+      description: ''
+      required: true
+      type: string
+  responses:
+    '200':
+      description: ''
+  security: []
