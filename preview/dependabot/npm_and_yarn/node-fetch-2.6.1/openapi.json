@@ -1,0 +1,2480 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "",
+    "title": "iotronic",
+    "description": ""
+  },
+  "host": "",
+  "basePath": "",
+  "paths": {
+    "/{{iotronic_url}}/v1/boards/test/ports": {
+      "put": {
+        "tags": [],
+        "summary": null,
+        "operationId": "Attach Port_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "network": {
+                  "type": "string",
+                  "example": "bc0a17c7-6f8c-40d8-89a3-6139caa41456"
+                },
+                "subnet": {
+                  "type": "string",
+                  "example": "bc0a17c7-6f8c-40d8-89a3-6139caa41456"
+                }
+              },
+              "required": [
+                "network",
+                "subnet"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{{iotronic_url}}/v1/boards/test/ports/b697b3f8-eabe-453a-a7b0-afbf7abfb757": {
+      "delete": {
+        "tags": [],
+        "summary": null,
+        "operationId": "Port Detach_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{auth_url}}/v3/auth/tokens": {
+      "post": {
+        "tags": [],
+        "summary": "",
+        "operationId": "token issue_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "auth": {
+                  "type": "object",
+                  "properties": {
+                    "identity": {
+                      "type": "object",
+                      "properties": {
+                        "methods": {
+                          "type": "array",
+                          "items": {
+                            "type": [
+                              "string"
+                            ]
+                          }
+                        },
+                        "password": {
+                          "type": "object",
+                          "properties": {
+                            "user": {
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "example": "{{user}}"
+                                },
+                                "domain": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string",
+                                      "example": "default"
+                                    }
+                                  },
+                                  "required": [
+                                    "id"
+                                  ]
+                                },
+                                "password": {
+                                  "type": "string",
+                                  "example": "{{password}}"
+                                }
+                              },
+                              "required": [
+                                "name",
+                                "domain",
+                                "password"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "user"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "methods",
+                        "password"
+                      ]
+                    },
+                    "scope": {
+                      "type": "object",
+                      "properties": {
+                        "project": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "example": "{{project}}"
+                            },
+                            "domain": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "example": "default"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "domain"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "project"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "identity",
+                    "scope"
+                  ]
+                }
+              },
+              "required": [
+                "auth"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards": {
+      "post": {
+        "tags": [],
+        "summary": "",
+        "operationId": "board create_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string",
+                  "example": "{{$randomInt}}"
+                },
+                "mobile": {
+                  "type": "boolean"
+                },
+                "location": {
+                  "type": "array",
+                  "items": {
+                    "type": [
+                      "object"
+                    ],
+                    "required": [
+                      "latitude",
+                      "altitude",
+                      "longitude"
+                    ],
+                    "properties": {
+                      "latitude": {
+                        "type": "string",
+                        "example": "1"
+                      },
+                      "altitude": {
+                        "type": "string",
+                        "example": "3"
+                      },
+                      "longitude": {
+                        "type": "string",
+                        "example": "2"
+                      }
+                    }
+                  }
+                },
+                "type": {
+                  "type": "string",
+                  "example": "server"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "board{{$randomInt}}"
+                }
+              },
+              "required": [
+                "code",
+                "mobile",
+                "location",
+                "type",
+                "name"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/": {
+      "get": {
+        "tags": [],
+        "summary": "",
+        "operationId": "board list_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/{{target_board}}/action": {
+      "post": {
+        "tags": [],
+        "summary": null,
+        "operationId": "Board DeviceUpgradeLR_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "example": "DeviceUpgradeLR"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "delay": {
+                      "type": "number",
+                      "example": 3
+                    },
+                    "version": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "update_conf": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "delay",
+                    "version",
+                    "update_conf"
+                  ]
+                }
+              },
+              "required": [
+                "action",
+                "parameters"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/detail": {
+      "get": {
+        "tags": [],
+        "summary": "",
+        "operationId": "board list another proj_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "project",
+            "in": "query",
+            "required": true,
+            "x-is-map": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/felooca-lr/services/http/action": {
+      "post": {
+        "tags": [],
+        "summary": null,
+        "operationId": "service ServiceEnable_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "example": "ServiceEnable"
+                }
+              },
+              "required": [
+                "action"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/felooca-lr/services/https/action": {
+      "post": {
+        "tags": [],
+        "summary": null,
+        "operationId": "service ServiceDisable_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "example": "ServiceDisable"
+                }
+              },
+              "required": [
+                "action"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/laptop-14": {
+      "delete": {
+        "tags": [],
+        "summary": "",
+        "operationId": "board destroy_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/laptop-14/plugins": {
+      "put": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin inject_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "plugin": {
+                  "type": "string",
+                  "example": "runner"
+                },
+                "onboot": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "plugin",
+                "onboot"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugins on board_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/laptop-14/plugins/runner": {
+      "post": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin STATUS_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "example": "PluginStatus"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              "required": [
+                "action",
+                "parameters"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin remove_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/laptop-14/plugins/smartme": {
+      "post": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin START_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "example": "PluginStart"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "polling": {
+                      "type": "string",
+                      "example": "600"
+                    },
+                    "ckan_enabled": {
+                      "type": "boolean"
+                    },
+                    "temperature": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "A0"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    },
+                    "brightness": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "A1"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    },
+                    "humidity": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "A2"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    },
+                    "gas": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "A3"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    },
+                    "noise": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "A4"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    },
+                    "pressure": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "i2c"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "polling",
+                    "ckan_enabled",
+                    "temperature",
+                    "brightness",
+                    "humidity",
+                    "gas",
+                    "noise",
+                    "pressure"
+                  ]
+                }
+              },
+              "required": [
+                "action",
+                "parameters"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/laptop-14/plugins/zero": {
+      "post": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin CALL_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "example": "PluginCall"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {},
+                  "required": []
+                }
+              },
+              "required": [
+                "action",
+                "parameters"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin show on board_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/swordfish-00/": {
+      "get": {
+        "tags": [],
+        "summary": "",
+        "operationId": "board show_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/swordfish-00/action": {
+      "post": {
+        "tags": [],
+        "summary": null,
+        "operationId": "Board DeviceReboot_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "example": "DeviceReboot"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "delay": {
+                      "type": "number",
+                      "example": 3
+                    }
+                  },
+                  "required": [
+                    "delay"
+                  ]
+                }
+              },
+              "required": [
+                "action",
+                "parameters"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/swordfish-00/webservices": {
+      "put": {
+        "tags": [],
+        "summary": null,
+        "operationId": "expose webservice on board_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "nodered"
+                },
+                "port": {
+                  "type": "number",
+                  "example": 1880
+                },
+                "secure": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "name",
+                "port",
+                "secure"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "webservices on board_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/swordfish-00/webservices/disable": {
+      "delete": {
+        "tags": [],
+        "summary": "",
+        "operationId": "module webservice disable_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/swordfish-00/webservices/enable": {
+      "post": {
+        "tags": [],
+        "summary": null,
+        "operationId": "module webservice enable_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dns": {
+                  "type": "string",
+                  "example": "fabione"
+                },
+                "zone": {
+                  "type": "string",
+                  "example": "iot.felooca.eu"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "fabio@smartme.io"
+                }
+              },
+              "required": [
+                "dns",
+                "zone",
+                "email"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/test": {
+      "patch": {
+        "tags": [],
+        "summary": "",
+        "operationId": "board update_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mobile": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "mobile"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/test/services": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "services on board_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/test/services/restore": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "services restore on board_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/boards/test/services/test/action": {
+      "post": {
+        "tags": [],
+        "summary": null,
+        "operationId": "service ServiceRestore_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "example": "ServiceRestore"
+                }
+              },
+              "required": [
+                "action"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/enabledwebservices": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "enabled webservice show_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/fleets": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "fleet list_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "tags": [],
+        "summary": null,
+        "operationId": "fleet create_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "example": ""
+                },
+                "name": {
+                  "type": "string",
+                  "example": "fleet{{$randomInt}}"
+                }
+              },
+              "required": [
+                "description",
+                "name"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/fleets/3d0f7993-2431-4cb1-a26d-4531ff843c79/boards/": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "boards_in_fleet_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/fleets/gruppone": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "fleet show_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/fleets/test": {
+      "delete": {
+        "tags": [],
+        "summary": null,
+        "operationId": "fleet destroy_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "patch": {
+        "tags": [],
+        "summary": null,
+        "operationId": "fleet update_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "example": "yeaaaaaaaaaaaaaa"
+                }
+              },
+              "required": [
+                "description"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/plugins": {
+      "post": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin create_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string",
+                  "example": "# Copyright 2017 MDSLAB - University of Messina\n# All Rights Reserved.\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\"); you may\n# not use this file except in compliance with the License. You may obtain\n# a copy of the License at\n#\n# http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT\n# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the\n# License for the specific language governing permissions and limitations\n# under the License.\n\nfrom iotronic_lightningrod.plugins import Plugin\n\nfrom oslo_log import log as logging\n\nLOG = logging.getLogger(__name__)\n\n# User imports\n\n\nclass Worker(Plugin.Plugin):\n\ndef __init__(self, name, th_result, plugin_conf=None):\nsuper(Worker, self).__init__(name, th_result, plugin_conf)\n\ndef run(self):\nLOG.info(\"Input parameters: \" + str(self.plugin_conf))\nLOG.info(\"Plugin \" + self.name + \" process completed!\")\nself.th_result.put(\"ZERO RESULT\")"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "zeroOOO"
+                },
+                "callable": {
+                  "type": "boolean"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "polling": {
+                      "type": "string",
+                      "example": "600"
+                    },
+                    "ckan_enabled": {
+                      "type": "boolean"
+                    },
+                    "temperature": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "A0"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    },
+                    "brightness": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "A1"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    },
+                    "humidity": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "A2"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    },
+                    "gas": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "A3"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    },
+                    "noise": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "A4"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    },
+                    "pressure": {
+                      "type": "object",
+                      "properties": {
+                        "pin": {
+                          "type": "string",
+                          "example": "i2c"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "pin",
+                        "enabled"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "polling",
+                    "ckan_enabled",
+                    "temperature",
+                    "brightness",
+                    "humidity",
+                    "gas",
+                    "noise",
+                    "pressure"
+                  ]
+                }
+              },
+              "required": [
+                "code",
+                "name",
+                "callable",
+                "parameters"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin list_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/plugins/detail": {
+      "get": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin details_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "with_publics",
+            "in": "query",
+            "required": true,
+            "x-is-map": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/plugins/public": {
+      "get": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin list public_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/plugins/runner": {
+      "patch": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin update_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "callable": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "callable"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/plugins/zero": {
+      "delete": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin destroy_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "tags": [],
+        "summary": "",
+        "operationId": "plugin show_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/ports": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "Port List_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/requests": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "request list_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/requests/b0811508-40f1-4d86-b0ee-58f80a54446c/results": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "results of request_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/requests/f93414c0-706d-45ae-85c8-f772c78fa454": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "request show_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/services": {
+      "post": {
+        "tags": [],
+        "summary": null,
+        "operationId": "service create_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "port": {
+                  "type": "number",
+                  "example": 12345
+                },
+                "protocol": {
+                  "type": "string",
+                  "example": "TCP"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "service{{$randomInt}}"
+                }
+              },
+              "required": [
+                "port",
+                "protocol",
+                "name"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "service list_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/services/test": {
+      "delete": {
+        "tags": [],
+        "summary": null,
+        "operationId": "service destroy_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "patch": {
+        "tags": [],
+        "summary": null,
+        "operationId": "service update_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "port": {
+                  "type": "number",
+                  "example": 12345
+                }
+              },
+              "required": [
+                "port"
+              ],
+              "$schema": "http://json-schema.org/draft-04/schema#"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "service show_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/webservices": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "webservice list_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/webservices/{{test_webservice}}": {
+      "delete": {
+        "tags": [],
+        "summary": null,
+        "operationId": "unexpose a webservices_",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    },
+    "/{iotronic_url}}/v1/webservices/a2c43e4f-3e3e-aaaa-85d6-f1749fc3b5d1": {
+      "get": {
+        "tags": [],
+        "summary": null,
+        "operationId": "webservice show_",
+        "produces": [],
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "X-Auth-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "definitions": {}
+}
