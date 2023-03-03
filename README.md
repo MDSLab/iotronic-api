@@ -1,4 +1,4 @@
-# iotronic OpenAPI Specification
+# IoTronic OpenAPI Specification
 [![Build Status](https://travis-ci.com/MDSLab/iotronic-api.svg?branch=master)](https://travis-ci.com/MDSLab/iotronic-api)
 
 ## Links
